@@ -1,0 +1,72 @@
+body {
+    font-family: verdana, arial, helvetica;
+}
+
+.welcome-panel {
+    margin: 0 auto;
+    width: 300px;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: #ef90ef;
+}
+
+
+@-webkit-keyframes enter {
+    from {
+        right: -300px;
+        top: 575px;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+    to {
+        right: 50%;
+        top: 500px;
+        width: 200px;
+        height: 200px;
+        opacity: 1;
+        margin-right: -100px;
+    }
+}
+
+
+@-webkit-keyframes swipeout {
+    from {
+        left: 50%;
+        top: 500px;
+        width: 200px;
+        height: 200px;
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    to {
+        left: -310px;
+        top: 575px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.item {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border: 1px solid black;
+    background: #FF0000;
+    /*left: 50%;*/
+    right: -300px;
+    top: 500px;
+    margin-left: -100px;
+}
+
+.item.swipeout {
+    -webkit-animation: swipeout 0.2s ease-in;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.item.enter {
+    -webkit-animation: enter 0.2s ease-out;
+    -webkit-animation-fill-mode: forwards;
+}
